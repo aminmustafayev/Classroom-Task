@@ -1,0 +1,67 @@
+{
+  "student": [
+    {
+      "id": "1",
+      "fullName": "Amin",
+      "username": "Mustafayev",
+      "email": "amin@gmail.com",
+      "password": "amin123",
+      "grades": []
+    },
+    {
+      "id": "NYsYqa5QMAD-ESgBThXUj",
+      "fullName": "Gavin Boone",
+      "userName": "kadisowi",
+      "email": "junocixi@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "grades": [],
+      "profileImage": "Recusandae Reprehen"
+    }
+  ],
+  "teacher": [
+    {
+      "id": "1",
+      "fullName": "Elnur",
+      "username": "Enurxo",
+      "email": "elnur@mail.com",
+      "password": "elnur123",
+      "major": [
+        {
+          "id": "2ks",
+          "programing": "Front Devoloper"
+        }
+      ]
+    },
+    {
+      "id": "jVreG--y1l9DDSv2pWfqd",
+      "fullName": "Ainsley Lawrence",
+      "userName": "humogule",
+      "email": "elngrewgur@mail.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "L9B5_GxDcEU19fmCnM91K",
+      "fullName": "Emerson Barr",
+      "userName": "kanyxyveqa",
+      "email": "kyze@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "major": []
+    },
+    {
+      "id": "YN9vY2LwLXaZkJO26PQHQ",
+      "fullName": "Shelby Villarreal",
+      "userName": "qixavy",
+      "email": "riqiqemac@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "major": []
+    },
+    {
+      "id": "oDhbwwZC12v27CtTmCrUs",
+      "fullName": "Shelby Villarreal",
+      "userName": "qixavy",
+      "email": "riqiqegregrwmac@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "major": []
+    }
+  ]
+}
