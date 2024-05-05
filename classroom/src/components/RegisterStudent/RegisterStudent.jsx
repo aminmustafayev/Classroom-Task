@@ -4,20 +4,39 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import StudentClass from '../../classes/studentclass';
 import { getAll, post } from '../../API';
 import { endpoint, endpoint2 } from '../../API/base';
+import Swal from 'sweetalert2'
 
 const RegisterStudent = () => {
+  const [form]=Form.useForm()
   const onFinish = async (values) => {
     const res = await getAll(endpoint)
     const res2 = await getAll(endpoint2)
     const existEmail1 = res.data.some(x => x.email == values.email2)
     const existEmail2 = res2.data.some(x => x.email == values.email2)
     if (existEmail1) {
-      alert('Email Movcuddur1') 
+      Swal.fire({
+        icon: "error",
+        title: "Bu Gmail istifade olunub!",
+        text: "Yeni gmailden istifade edin!",
 
-    } else  {
+      });
+    } else {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,  
+        timer: 1500
+      });
       if (existEmail2) {
-        alert('Email Movcuddur')
+        Swal.fire({
+          icon: "error",
+          title: "Bu Gmail istifade olunub!",
+          text: "Yeni gmailden istifade edin!",
+          
+        });
       } else {
+        form.resetFields()
         const newUser = new StudentClass(values.fullName2, values.username2, values.email2, values.password2, values.imageURL2)
         post(endpoint, newUser)
       }
@@ -35,6 +54,7 @@ const RegisterStudent = () => {
   return (
 
     <Form
+    form={form}
       name="normal_login"
       className="login-form"
       initialValues={{

@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 
 class Task {
     constructor( title, description, topic, deadline,teacherId  ){
-        this.teacherId=nanoid()
+        this.id=nanoid()
         this.createAt = new Date()
         this.title=title
         this.description=description

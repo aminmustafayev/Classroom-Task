@@ -1,15 +1,45 @@
 import React from 'react'
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { getAll } from '../../API';
+import { endpoint3, endpoint } from '../../API/base';
+import Swal from 'sweetalert2'
 
 
 const LoginStudent = () => {
+  const [form]=Form.useForm()
   const onFinish = (values) => {
+
     console.log('Received values of form: ', values);
+    getAll(endpoint).then((res)=>{
+      const email = res.data.find((e)=>e.email === values.email && e.password === values.password)
+      
+      if (email) {
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        localStorage.setItem("Student Id", email.id)
+        form.resetFields()
+      }
+
+      else{
+        Swal.fire({
+          icon: "error",
+          title: "Bele bir istifadeci yoxdur",
+          text: "Something went wrong!",
+        });
+      }
+      
+    })
   };
   return (
     <>
-      <Form
+      <Form 
+      form={form}
         name="normal_login"
         className="login-form"
         initialValues={{
@@ -17,17 +47,6 @@ const LoginStudent = () => {
         }}
         onFinish={onFinish}
       >
-        <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your Student Username!',
-            },
-          ]}
-        >
-          <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Student Username" />
-        </Form.Item>
         <Form.Item
         name="email"
     

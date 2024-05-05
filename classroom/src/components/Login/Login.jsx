@@ -2,6 +2,7 @@ import React from 'react'
 import {  Tabs } from 'antd';
 import LoginTeacher from '../LoginTeacher/LoginTeacher';
 import LoginStudent from '../LoginStudent/LoginStudent';
+import { getAll } from '../../API';
 
 const onChange = (key) => {
     console.log(key);
@@ -20,6 +21,7 @@ const onChange = (key) => {
   ];
 
 const Login = () => {
+  
 
   return (
 <>

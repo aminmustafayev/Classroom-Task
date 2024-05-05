@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   MenuFoldOutlined,
@@ -43,7 +44,7 @@ const Sidebar = function () {
               {
                 key: '3',
                 icon: <UploadOutlined />,
-                label: 'nav 3',
+                label: 'Tasks',
               },
             ]}
           />

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { BASE_URL } from './base'
+import { BASE_URL, endpoint3 } from './base'
 
 
 export async function getAll(endpoint) {
@@ -17,7 +17,7 @@ export async function getAll(endpoint) {
 export async function deleteOne(endpoint, id) {
     let result = { data: null, error: null };
     await axios
-      .delete(BASE_URL + endpoint + `/${id}`)
+      .delete(BASE_URL + endpoint3 + `/${id}`)
       .then((res) => {
         result = { ...result, data: res.data };
       })
